@@ -1,0 +1,3 @@
+near call sakura1999tb.testnet getMyContracts '{}' --account-id sakura1999tb.testnet --gas=300000000000000
+
+near call sender.sakura1999tb.testnet createContract '{"contractInfomation":{"price":"12", "accountProfile":{"id":"1", "level":"1", "wallet":"1", "power":"1"}, "account":{"username":"1", "password":"1"}}, "receiver":"sakura1999tb.testnet"}' --account-id sender.sakura1999tb.testnet --gas=300000000000000

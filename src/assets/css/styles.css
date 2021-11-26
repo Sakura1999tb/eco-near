@@ -1,0 +1,128 @@
+.card-body {
+  position: relative;
+  padding: 5 px 20 px 20 px;
+  color: #fff;
+  flex: auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-image::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 10%;
+  top: 140px;
+  left: 0;
+  background-image: linear-gradient(to top, #151515, transparent);
+  z-index: 1;
+}
+
+.card:hover {
+  box-shadow: 0 0 1px 1px #ddd;
+  margin-top: -10px;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+
+.header {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 10px 100px;
+  display: flex;
+  align-items: center;
+}
+
+.header-component {
+  flex: 1;
+}
+
+main {
+  padding-top: 30px;
+}
+
+.seller-name {
+  font-style: italic;
+  font-weight: 400;
+  margin-top: 10px;
+  color: rgb(255 255 255 / 70%);
+  font-size: 14px !important;
+}
+
+.card-description {
+  font-size: 17px;
+}
+
+.name-user {
+  color: rgb(255 255 255 / 70%);
+  cursor: pointer;
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 500;
+  font-family: ui-monospace;
+}
+
+.name-user:hover {
+  text-decoration: underline;
+}
+
+.sign-out {
+  margin-left: 20px;
+  padding: 3px 9px;
+}
+
+.transtations {
+  color: #ddd;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+.transtation {
+  cursor: pointer;
+}
+
+.modal-content {
+  background-color: #000;
+}
+
+.saling {
+  font-weight: 600;
+  font-style: italic;
+  color: red;
+  font-size: 20px;
+}
+
+.success-complete {
+  font-weight: 600;
+  font-style: italic;
+  color: rgb(69, 243, 0);
+  font-size: 20px;
+}
+
+.btn-close {
+  color: #fff;
+  background: transparent
+    url("https://flaticons.net/icon.php?slug_category=mobile-application&slug_icon=close")
+    center/1em auto no-repeat;
+}
+
+input {
+  width: 100%;
+}
+
+.price {
+  width: 150px !important;
+  margin-right: 10px;
+}
+
+.transtation-name-highlight{
+  color: #85dc35 !important;
+  font-weight: 700;
+}
