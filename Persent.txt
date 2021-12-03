@@ -37,6 +37,19 @@ I choose to account and buy it.
 transfers.
 After transferring the money, we checked the transaction, found that there was a newly purchased account with the username mock15 and the password mock15. We check the wallet of hamoon.testnet and see that we have received the money from the contract
 
+Now I will show about application development using near-sdk-as. Here is the code about smart contract. I divided it into 4 folders. 
+
+First I will talk about models, where the main data model of the system is SaleContract, which is equivalent to transaction details such as buyer, seller, state, creation and closing time, and models. A supplementary model to it, ContractInfomation contains information about the selling price of the account associated with the account. In ContractInfomation I again use the Account models containing AccountAuthen as username and password, AccountProfile containing id, level, wallet, number of champions and number of skins. 
+
+storages, which stores and manages the SaleContract. The SaleContracts are stored in a PersistentVector. Storages also contains methods for retrieving, updating, and adding new SaleContract. 
+
+The controller directory is where you store methods for controlling such as creating, retrieving, or deleting SaleContracts from storages or handling account purchases. 
+
+In the account buying section, after each checking of conditions such as the contract and whether the transfer amount is valid or not, if it is not valid, it will automatically return the amount to the buyer, otherwise the contract will conduct the transaction and transfer money to the seller.
+
+In the createContract section, we also need to verify the account information by checking if the fields are valid, whether the account is being sold or not, and finally, check the account information by getting the information. account info from gameCenter, it's mock folder where 15 accounts and data are stored, then compare. If all are valid, a new SaleContract will be created. 
+
+Finally, the index.ts file is the place to export the functions for smartContract, which will call the functions in the Controller directly.
 
 The system has worked well, but there are still some disadvantages such as username and password security on the blockchain, the seller changes the password right after receiving the money? I will try to develop more features.
 

@@ -1,6 +1,5 @@
 import { Context } from "near-sdk-as";
 import { ContractInfomation } from "./ContractInfomation.model";
-//this is required if using a local .env file for private key
 @nearBindgen
 export class SaleContract {
   public seller: string;
@@ -17,10 +16,4 @@ export class SaleContract {
     this.contractInfomation = contractInfomation;
     this.createdAt = createdAt;
   }
-  // constructor(contractInfomation: ContractInfomation) {
-  //   this.seller = Context.sender;
-  //   this.id = Context.blockTimestamp.toString();
-  //   this.isComplete = 0;
-  //   this.contractInfomation = contractInfomation;
-  // }
 }

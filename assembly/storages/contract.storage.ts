@@ -5,9 +5,10 @@ class Storage {
   public store: PersistentVector<SaleContract>;
 
   constructor() {
-    this.store = new PersistentVector<SaleContract>("e");
+    this.store = new PersistentVector<SaleContract>("e"); // database
   }
 
+  // get All SaleContracts
   getAll(): Array<SaleContract> {
     let result = new Array<SaleContract>(); // choose a unique prefix per collection
     for (let i = 0; i < this.store.length; i++) {
@@ -17,6 +18,7 @@ class Storage {
     return result;
   }
 
+  // get All SaleContracts by User
   getByUser(user: string): Array<SaleContract> {
     let result = new Array<SaleContract>(); // choose a unique prefix per collection
     for (let i = 0; i < this.store.length; i++) {
@@ -28,6 +30,7 @@ class Storage {
     return result;
   }
 
+  // get All SaleContracts are saling
   getExchanges(): Array<SaleContract> {
     let result = new Array<SaleContract>();
     for (let i = 0; i < this.store.length; i++) {
@@ -40,6 +43,7 @@ class Storage {
     return result;
   }
 
+  // get a SaleContract by id
   get(id: string): SaleContract | null {
     for (let i = 0; i < this.store.length; i++) {
       if (this.store[i].id == id) {
@@ -49,6 +53,7 @@ class Storage {
     return null;
   }
 
+  // update a SaleContract
   update(contract: SaleContract): void {
     for (let i = 0; i < this.store.length; i++) {
       const _contract: SaleContract = this.store[i];
@@ -58,10 +63,12 @@ class Storage {
     }
   }
 
+  // add a SaleContract
   push(contract: SaleContract): void {
     this.store.pushBack(contract);
   }
 
+  // delete All SaleContracts -> test
   deleteContracts(): u64 {
     while (!this.store.isEmpty) {
       this.store.pop();
@@ -69,6 +76,7 @@ class Storage {
     return 1;
   }
 
+  // delete a SaleContract 
   deleteContract(user: string, id: string): u64 {
     for (let i = 0; i < this.store.length; i++) {
       const contract: SaleContract = this.store[i];

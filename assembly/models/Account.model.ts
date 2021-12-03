@@ -15,10 +15,6 @@ export class AccountProfile {
     skins: u64,
     image: string
   ) {
-    // this.id = id;
-    // this.level = level;
-    // this.wallet = wallet;
-    // this.power = power;
     this.id = id;
     this.level = level;
     this.wallet = wallet;

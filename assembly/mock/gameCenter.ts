@@ -197,6 +197,8 @@ class gameCenter {
         )
       )
     );
+
+    // demo
     this.data.push(
       new Account(
         new AccountAuthen("mock15", "mock15"),
