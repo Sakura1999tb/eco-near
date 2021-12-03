@@ -229,6 +229,7 @@ class App extends Component {
           createContract={this.createContract}
           deleteContract={this.deleteContract}
           page={this.state.page}
+          buyAccount={this.buyAccount}
         />
         <header className="header">
           <div className="header-component">
@@ -286,7 +287,9 @@ class App extends Component {
             )}
           </div>
         </header>
-        <main style={{ backgroundColor: "#1b1818" }}>{this.renderPage()}</main>
+        <main style={{ backgroundColor: "#1b1818", minHeight: "100%" }}>
+          {this.renderPage()}
+        </main>
       </>
     );
   }
@@ -294,9 +297,8 @@ class App extends Component {
 
 App.propTypes = {
   contract: PropTypes.shape({
-    getContracts: PropTypes.func.isRequired,
     getAll: PropTypes.func.isRequired,
-    getContracts: PropTypes.func.isRequired,
+    getExchanges: PropTypes.func.isRequired,
     createContract: PropTypes.func.isRequired,
     deleteContracts: PropTypes.func.isRequired,
     deleteContract: PropTypes.func.isRequired,

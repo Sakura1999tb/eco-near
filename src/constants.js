@@ -28,3 +28,5 @@ export const emptySaleContractModal = {
     },
   },
 };
+
+export const LIMITED = 8;

@@ -3,9 +3,12 @@ import { CheckCircle } from "@mui/icons-material";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 export default class transtation extends Component {
   render() {
-    const { transtation, currentUser } = this.props;
-    const { id, champions, skins, price, status, seller, buyer, createdAt } =
-      transtation;
+    const { saleContract, currentUser } = this.props;
+    const { id, seller, buyer, createdAt, closedAt } = saleContract;
+    const { champions, skins } =
+      saleContract.contractInfomation.account.accountProfile;
+    const { price } = saleContract.contractInfomation;
+    const status = saleContract.isComplete == "1" ? true : false;
     return (
       <tr
         className="transtation"
@@ -29,7 +32,7 @@ export default class transtation extends Component {
         >
           {buyer}
         </td>
-        <td>{new Date(parseInt(createdAt)).toUTCString()}</td>
+        <td>{new Date(parseInt(createdAt)).toString()}</td>
         <td>
           {status ? (
             <CheckCircle color="success" />

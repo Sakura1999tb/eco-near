@@ -10,12 +10,12 @@ export function createContract(
   return contractController.createContract(contractInfomation, createdAt);
 }
 
-export function getMyContracts(user: string, page: u32): Array<SaleContract> {
-  return contractController.getMyContracts(user, page);
+export function getMyContracts(user: string): Array<SaleContract> {
+  return contractController.getMyContracts(user);
 }
 
-export function getContracts(page: u32): Array<SaleContract> {
-  return contractController.getContracts(page);
+export function getExchanges(): Array<SaleContract> {
+  return contractController.getExchanges();
 }
 
 export function getAll(): Array<SaleContract> {

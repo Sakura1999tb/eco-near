@@ -1,0 +1,43 @@
+Hello everyone. My name is Toan.
+Can you see my share screen?
+Today, i will present about my dApp.
+
+This is the slide I used to present my application, my app is used to buy and sell p2p accounts through near sdk and near blockchain.
+
+We first deal with the problems of using traditional exchange models.
+
+In the case of only two people, it is a mutual distrust between the buyer and the seller. Of course I am not talking about live trading. If the buyer pays in advance, it may be cheated when the seller does not give the account or, the seller gives the account first but the buyer doesn't pay.
+
+To solve that case, we will usually hire a middleman to do the transaction. The seller will give the account to the middleman, and the buyer will give him the money. Then He will give the money to the seller and give the account to the buyer.
+This method is very effective and popular, but as in the first case, the middleman can be a scammer and if we want to find a middleman who we can trust, it will take large fee.
+
+With the development of technology, we can create a trusted middleman who will take the seller's account and receive the buyer's money, after confirmation will return the money and account to they. It is called a smart contract.
+
+This is a diagram that I have designed for a p2p game account trading system. It includes buyers, sellers, smart contracts and a game center.
+Step by step, we have a seller who will post an account with the account information and the amount of money that person want to sell to the smart contract.Then The smart contract will perform an account check by getting the information from the game center. If the account information corresponding to that username and password is correct, it will be saved in the database and waiting for the buyer. Otherwise, there will be an error message about the seller. When the buyer sees a suitable account, he will make a call to transfer money to the Smart contract to buy the account. After confirming the valid amount, the smart contract will  transfer the account to the buyer and the money to the seller and lock the transaction. It's really simple.
+
+Here I will demo my application.
+This is the user interface of the league of legends game account exchange, where it will display the accounts that are being sold. 
+
+We can click on each account to see more detailed information such as number of champions, number of skins, level and balance in wallet.
+
+To buy or sell an account, we need to log in.
+
+And here is the user interface of the profile page, where my transactions are stored and click on each transaction to view detailed information. I can also add an account to sell here
+
+Here I create a trading account.
+because i don't cooperate with riot games, in this app i am using a mock game center where 15 game accounts and their info are stored.
+Here I will add an account for sale, I will add an account with username mock15 and password also mock15. I need to fill in the account information correctly with the information in the game center in order to be able to sell. Includes champions, skins, wallets, and levels. After filling it out, I click create to sell this account.
+
+we can see the account has been sold on the exchange for 100 near, the selling account is hamoon.testnet.
+
+Then, I will go to another account to buy.
+I will use sakura1999tb.testnet to buy.
+I choose to account and buy it.
+transfers.
+After transferring the money, we checked the transaction, found that there was a newly purchased account with the username mock15 and the password mock15. We check the wallet of hamoon.testnet and see that we have received the money from the contract
+
+
+The system has worked well, but there are still some disadvantages such as username and password security on the blockchain, the seller changes the password right after receiving the money? I will try to develop more features.
+
+That's the end of my demo. Thank you for watching.

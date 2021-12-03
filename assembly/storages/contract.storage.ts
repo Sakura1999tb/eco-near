@@ -1,8 +1,6 @@
 import { SaleContract } from "../models/SaleContract.model";
 import { PersistentVector, logging } from "near-sdk-as";
 
-const LIMITED = 10;
-
 class Storage {
   public store: PersistentVector<SaleContract>;
 
@@ -19,38 +17,23 @@ class Storage {
     return result;
   }
 
-  getByUser(user: string, page: u32): Array<SaleContract> {
+  getByUser(user: string): Array<SaleContract> {
     let result = new Array<SaleContract>(); // choose a unique prefix per collection
-    let count: u32 = 0;
     for (let i = 0; i < this.store.length; i++) {
       const contract: SaleContract = this.store[i];
-      if (result.length == LIMITED) {
-        break;
-      }
-
       if (contract.seller == user || contract.buyer == user) {
-        count++;
-        if (count >= (page - 1) * LIMITED) {
-          result.push(contract);
-        }
+        result.push(contract);
       }
     }
     return result;
   }
 
-  getExchanges(page: u32): Array<SaleContract> {
+  getExchanges(): Array<SaleContract> {
     let result = new Array<SaleContract>();
-    let count: u32 = 0;
     for (let i = 0; i < this.store.length; i++) {
       const contract: SaleContract = this.store[i];
-      if (result.length == LIMITED) {
-        break;
-      }
       if (!contract.isComplete) {
-        count++;
-        if (count >= (page - 1) * LIMITED) {
-          result.push(contract);
-        }
+        result.push(contract);
       }
     }
 

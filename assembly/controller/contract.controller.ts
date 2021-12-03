@@ -23,6 +23,20 @@ export function createContract(
       accountAuthen.password
     );
 
+    const saleContracts = storage.getAll();
+
+    for (let i = 0; i < saleContracts.length; i++) {
+      const saleContract = saleContracts[i];
+      if (
+        saleContract.isComplete == 0 &&
+        saleContract.contractInfomation.account.accountAuthen.username ==
+          contractInfomation.account.accountAuthen.username
+      ) {
+        logging.log("exist")
+        return 0;
+      }
+    }
+
     if (_account) {
       const _accountProfile: AccountProfile = _account.accountProfile;
       if (
@@ -54,16 +68,16 @@ export function createContract(
   return 0;
 }
 
-export function getMyContracts(user: string, page: u32): Array<SaleContract> {
-  return storage.getByUser(user, page);
+export function getMyContracts(user: string): Array<SaleContract> {
+  return storage.getByUser(user);
 }
 
 export function getAll(): Array<SaleContract> {
   return storage.getAll();
 }
 
-export function getContracts(page: u32): Array<SaleContract> {
-  return storage.getExchanges(page);
+export function getExchanges(): Array<SaleContract> {
+  return storage.getExchanges();
 }
 
 export function deleteContracts(): u64 {
